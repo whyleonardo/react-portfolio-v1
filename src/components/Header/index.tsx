@@ -32,7 +32,6 @@ export const Header = () => {
           mt={isNotSmallerScreen ? '0' : '4'}>
           <Text
             fontSize='5xl'
-            // mt='2'
             fontWeight='semibold'>
             Olá, eu sou</Text>
 
@@ -47,18 +46,20 @@ export const Header = () => {
 
           <Text
             mt='4'
+            fontWeight='semibold'
+            fontSize='3xl'
             color={isDark ? 'gray.200' : 'gray.500'}
           >
-            FRASE</Text>
+            Desenvolvedor Front-End </Text>
 
           <Button
+            as='a'
+            target='_blank'
+            href='https://github.com/whyleonardo?tab=repositories'
             mt='8'
             transition='0.2s linear'
-            colorScheme='blue'
-            onClick={() =>
-              window.open("#")}
-          >
-            Hire Me</Button>
+            colorScheme='blue'>
+            Meus Projetos</Button>
         </Box>
 
         <Image

@@ -14,7 +14,9 @@ const colors = {
   gmail: '#DB4437',
   firebase: '#ffcc30',
   typescript: '#2f72bc',
-  react: '#5ccfee'
+  react: '#5ccfee',
+  jest: '#99425b',
+  chakra: '#3ac7bd'
 }
 
 const theme = extendTheme({ colors })

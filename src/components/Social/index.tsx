@@ -13,7 +13,7 @@ export const Social = () => {
         <IconButton
           as='a'
           target='_blank'
-          href=''
+          href='https://twitter.com/christianlsb0'
           _hover={{ color: 'twitter' }}
           aria-label='Twitter'
           variant='unstyled'
@@ -25,7 +25,7 @@ export const Social = () => {
         <IconButton
           as='a'
           target='_blank'
-          href=''
+          href='https://www.instagram.com/whyleonardo_/'
           _hover={{ color: 'instagram' }}
           aria-label='Instagram'
           variant='unstyled'
@@ -37,7 +37,7 @@ export const Social = () => {
         <IconButton
           as='a'
           target='_blank'
-          href=''
+          href='https://open.spotify.com/user/christian.lsb16'
           _hover={{ color: 'spotify' }}
           aria-label='Spotify'
           variant='unstyled'
@@ -49,7 +49,7 @@ export const Social = () => {
         <IconButton
           as='a'
           target='_blank'
-          href=''
+          href='mailto:christian.lsb16@gmail.com'
           _hover={{ color: 'gmail' }}
           aria-label='Email'
           variant='unstyled'

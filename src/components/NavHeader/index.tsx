@@ -120,7 +120,7 @@ export const NavHeader = () => {
           as='a'
           ml='2'
           boxSize='50'
-          href=""
+          href="https://github.com/whyleonardo"
           target='_blank'
           _hover={{ color: 'github' }}
           aria-label={""}
@@ -133,7 +133,7 @@ export const NavHeader = () => {
           as='a'
           ml='2'
           boxSize='50'
-          href=""
+          href="https://www.linkedin.com/in/christianlsb/"
           _hover={{ color: 'linkedin' }}
           target='_blank'
           aria-label={""}
