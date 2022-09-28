@@ -29,13 +29,10 @@ export const Profile = () => {
       </Box>
 
       <Box alignSelf="center" justifyContent='center' >
-        <Text fontWeight="bold" textAlign='center' fontSize="2xl">Desenvolvedor React Front-End, com foco em aplicações Web. </Text>
         <Grid
           display={isNotSmallerScreen ? 'flex' : 'grid'}
           templateColumns='repeat(2, 150px)'
-          px='2'
-          mt={8}
-          py='2'
+          p='2'
           gap='2'
           justifyContent='center'
           alignItems='center'
