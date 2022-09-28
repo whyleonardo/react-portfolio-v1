@@ -9,7 +9,7 @@ export const App = () => {
   return (
     <>
       <NavHeader />
-      <VStack >
+      <VStack overflow='hidden' >
         <Header />
         <Social />
         <Profile />

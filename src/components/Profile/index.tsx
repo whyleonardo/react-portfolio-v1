@@ -4,7 +4,7 @@ import { Box, Flex, Heading, Text } from '@chakra-ui/layout';
 import Icon from '@chakra-ui/icon';
 import { FaReact } from 'react-icons/fa'
 import { SiTypescript, SiFirebase } from 'react-icons/si'
-import { useColorMode, VStack } from '@chakra-ui/react';
+import { Grid, useColorMode, VStack } from '@chakra-ui/react';
 
 SiTypescript
 
@@ -17,26 +17,29 @@ export const Profile = () => {
   return (
     <Flex
       py='5rem'
-      mx='50'
       direction={isNotSmallerScreen ? "row" : "column"}
       w="100%"
     >
-      <Box alignSelf="center" px="32" py="16" textAlign='center'>
+      <Box alignSelf="center" px="16" py="8" textAlign='center'>
         <Heading fontWeight="extrabold" color="cyan.500" size="4xl">
           7+
         </Heading>
         <Text fontSize="2xl" color="gray.400">Years of Experience</Text>
       </Box>
 
-      <Box alignSelf="center" textAlign='center' >
-        <Text fontWeight="bold" fontSize="2xl">Product Designer and Developer, specialised in mobile app development.</Text>
-        <Flex
-          direction={isNotSmallerScreen ? "row" : "column"}
+      <Box alignSelf="center" justifyContent='center' >
+        <Text fontWeight="bold" textAlign='center' fontSize="2xl">Product Designer and Developer, specialised in mobile app development.</Text>
+        <Grid
+          display={isNotSmallerScreen ? 'flex' : 'grid'}
+          templateColumns='repeat(2, 150px)'
+          px='2'
           mt={8}
+          // @ts-ignore
+          // mr={isNotSmallerScreen && '20'}
           py='2'
           gap='2'
-          justifyContent={isNotSmallerScreen ? "center" : "normal"}
-          alignItems={isNotSmallerScreen ? "normal" : "center"}
+          justifyContent='center'
+          alignItems='center'
         >
           <VStack
             rounded="xl"
@@ -122,7 +125,24 @@ export const Profile = () => {
               Web Apps
             </Text>
           </VStack >
-        </Flex >
+
+          <VStack
+            rounded="xl"
+            p='6'
+            w='150px'
+            bg={isDark ? "gray.700" : "black"}
+            boxShadow='lg'
+            transition='0.5s linear'
+            _hover={{ bg: isDark ? "gray.600" : "gray.700" }}
+            alignItems='center'
+            justifyContent='center'
+          >
+            <Icon as={SiFirebase} w="16" h="16" color='firebase' _groupHover={{ color: 'firebase' }} />
+            <Text fontSize="xl" color='gray.100' _groupHover={{ color: 'black' }} fontWeight="semibold">
+              Web Apps
+            </Text>
+          </VStack >
+        </Grid >
       </Box >
     </Flex >
   )
