@@ -86,7 +86,7 @@ export const ProjectCard = ({ project }: ProjectProps) => {
             transform='auto'
             _groupHover={{ scale: 1.05 }}
             transition='0.5s ease-out'
-            dropShadow='5px 5px 10px rgba(0, 0, 0, 0.5)'
+            dropShadow='5px 5px 3px rgba(0, 0, 0, 0.5)'
           />
 
           : <Icon

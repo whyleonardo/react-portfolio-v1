@@ -29,6 +29,15 @@ const variants = {
 }
 
 const projects = [
+
+  {
+    title: 'Movie Shop',
+    url: '#',
+    img: '',
+    repo: 'https://github.com/whyleonardo/mini-shop',
+    isCompleted: false
+  },
+
   {
     title: 'Todo App',
     url: 'https://my-todo-app-jade.vercel.app/',
@@ -46,14 +55,13 @@ const projects = [
   },
 
   {
-    title: 'Movie Shop',
-    url: '#',
-    img: '',
-    repo: 'https://github.com/whyleonardo/mini-shop',
-    isCompleted: false
+    title: 'Spotify Searcher',
+    url: 'https://spotify-album-searcher.vercel.app/',
+    img: '/assets/spotifysearcher.png',
+    repo: 'https://github.com/whyleonardo/Spotify-Album-Searcher',
+    isCompleted: true
   }
 ]
-
 
 const StackChakra = chakra(motion.div, {
   /**
