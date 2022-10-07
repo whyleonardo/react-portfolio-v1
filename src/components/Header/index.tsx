@@ -1,5 +1,16 @@
-import { Circle, Stack, useColorMode, useMediaQuery, Flex, Box, Text, Button, Image } from "@chakra-ui/react";
+import { Circle, Stack, useColorMode, useMediaQuery, Flex, Box, Text, Button, Image, keyframes } from "@chakra-ui/react";
 import { motion } from "framer-motion";
+import { Link as RouterLink } from 'react-router-dom'
+
+const animationKeyframes = keyframes`
+  0% { transform: scale(1); }
+  25% { transform: scale(1.05); }
+  50% { transform: scale(1.05); }
+  75% { transform: scale(1); } 
+  100% { transform: scale(1); }
+`;
+
+const animation = `${animationKeyframes} 15s linear infinite`;
 
 export const Header = () => {
   const { colorMode } = useColorMode();
@@ -10,6 +21,8 @@ export const Header = () => {
   return (
     <Stack mt='2rem' mb={isNotSmallerScreen ? '1rem' : '4rem'}>
       <Circle
+        as={motion.div}
+        animation={animation}
         position='absolute'
         zIndex='-1'
         bg={isDark ? 'blue.100' : 'blue.500'}
@@ -53,16 +66,18 @@ export const Header = () => {
             Desenvolvedor Front-End </Text>
 
           <Button
-            as='a'
-            target='_blank'
-            href='https://github.com/whyleonardo?tab=repositories'
+            as={RouterLink}
+            to='/projects'
             mt='8'
-            transition='0.2s linear'
+            rounded='5px'
+            transition='0.5s linear'
             colorScheme='blue'>
             Meus Projetos</Button>
         </Box>
 
         <Image
+          as={motion.img}
+          animation={animation}
           alignSelf='center'
           my={isNotSmallerScreen ? '0' : '12'}
           mx='50px'

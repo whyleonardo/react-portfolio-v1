@@ -1,9 +1,7 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
 import { App } from './App'
-import { ChakraProvider, ColorModeScript, extendTheme } from '@chakra-ui/react'
-
-
+import { ChakraProvider, extendTheme } from '@chakra-ui/react'
 
 const colors = {
   linkedin: '#0077B5',
@@ -19,15 +17,27 @@ const colors = {
   chakra: '#3ac7bd'
 }
 
-const theme = extendTheme({ colors })
-
+const theme = extendTheme({
+  colors,
+  styles: {
+    global: {
+      body: {
+        fontFamily: 'Inter, sans- serif',
+        overflowX: 'hidden',
+        '&::-webkit-scrollbar': { width: '5px', height: '5px' },
+        '&::-webkit-scrollbar-thumb': {
+          background: 'blue.500',
+          borderRadius: '999px !important'
+        }
+      }
+    }
+  }
+})
 
 ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
   <React.StrictMode>
     <ChakraProvider theme={theme}>
-      {/* <ColorModeScript> */}
       <App />
-      {/* </ColorModeScript> */}
     </ChakraProvider>
   </React.StrictMode>
 )

@@ -1,7 +1,9 @@
-import { Flex, IconButton, useColorMode, Circle } from "@chakra-ui/react";
+import { Flex, useColorMode, Circle, IconButton, Button } from "@chakra-ui/react";
 import { FaSun, FaMoon, FaLinkedin, FaGithub } from 'react-icons/fa';
 import { motion } from "framer-motion";
 import { useEffect, useState } from "react";
+import { Link as RouterLink, useLocation } from "react-router-dom";
+import { BiArrowBack } from 'react-icons/bi'
 
 const variant = {
   firstInitial: {
@@ -48,6 +50,9 @@ export const NavHeader = () => {
   const { colorMode, toggleColorMode } = useColorMode();
   const isDark = colorMode === 'dark';
 
+  const location = useLocation();
+
+  const actualLocation = location.pathname === '/projects';
 
   const [scrollPosition, setScrollPosition] = useState(0);
 
@@ -78,40 +83,57 @@ export const NavHeader = () => {
       w='100%'
       boxShadow={scrollPosition > 1 ? 'sm' : 'none'}
     >
-      <Flex gap='2'>
-        <Circle
-          as={motion.div}
-          variants={variant}
-          initial='firstInitial'
-          animate='firstAnimate'
-          size='0.8rem'
-          bg='red.400'
-          transform='auto'
-          whileHover={{ translateY: -2.2 }}
-        />
 
-        <Circle
-          as={motion.div}
-          variants={variant}
-          initial='secondInitial'
-          animate='secondAnimate'
-          size='0.8rem'
-          bg='yellow.400'
-          transform='auto'
-          whileHover={{ translateY: -3.2 }}
-        />
+      {!actualLocation
+        ? (
+          <Flex gap='2'>
+            <Circle
+              as={motion.div}
+              variants={variant}
+              initial='firstInitial'
+              animate='firstAnimate'
+              size='0.8rem'
+              bg='red.400'
+              transform='auto'
+              whileHover={{ translateY: -2.2 }}
+            />
 
-        <Circle
-          as={motion.div}
-          variants={variant}
-          initial='thirdInitial'
-          animate='thirdAnimate'
-          size='0.8rem'
-          bg='green.400'
-          transform='auto'
-          whileHover={{ translateY: -4.2 }}
-        />
-      </Flex>
+            <Circle
+              as={motion.div}
+              variants={variant}
+              initial='secondInitial'
+              animate='secondAnimate'
+              size='0.8rem'
+              bg='yellow.400'
+              transform='auto'
+              whileHover={{ translateY: -3.2 }}
+            />
+
+            <Circle
+              as={motion.div}
+              variants={variant}
+              initial='thirdInitial'
+              animate='thirdAnimate'
+              size='0.8rem'
+              bg='green.400'
+              transform='auto'
+              whileHover={{ translateY: -4.2 }}
+            />
+          </Flex>
+        )
+
+        : (
+          <Button
+            bg='none'
+            transform='auto'
+            _hover={{ scale: 1.2 }}
+            _focus={{ bg: 'none' }}
+            as={RouterLink}
+            to='/'
+            children={<BiArrowBack size={30} />}
+          />
+        )
+      }
 
       <Flex>
         <IconButton
