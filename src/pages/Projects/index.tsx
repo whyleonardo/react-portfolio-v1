@@ -1,5 +1,6 @@
-import { chakra, shouldForwardProp, Grid, GridItem, useMediaQuery, Box, Image, AspectRatio, Flex } from "@chakra-ui/react"
-import { isValidMotionProp, motion } from "framer-motion"
+import { chakra, shouldForwardProp, Grid, GridItem, useMediaQuery, Box, Image, AspectRatio, Flex } from "@chakra-ui/react";
+import { isValidMotionProp, motion } from "framer-motion";
+import { ProjectCard } from './../../components/ProjectCard/index';
 
 const variants = {
   hidden: {
@@ -27,18 +28,32 @@ const variants = {
   }
 }
 
+const projects = [
+  {
+    title: 'Todo App',
+    url: 'https://my-todo-app-jade.vercel.app/',
+    img: '/assets/todoapp.png',
+    repo: 'https://github.com/whyleonardo/my-todo-app',
+    isCompleted: true
+  },
 
-const projects = {
-  todoApp: {
-    url: 'https://github.com/whyleonardo/my-todo-app'
+  {
+    title: 'Dot Money',
+    url: 'https://dot-money.vercel.app/',
+    img: '/assets/dotmoney.png',
+    repo: 'https://github.com/whyleonardo/dot-money',
+    isCompleted: true
   },
-  dotMoney: {
-    url: 'https://dot-money.vercel.app/'
-  },
-  movieShop: {
-    url: 'null'
+
+  {
+    title: 'Movie Shop',
+    url: '#',
+    img: '',
+    repo: 'https://github.com/whyleonardo/mini-shop',
+    isCompleted: false
   }
-}
+]
+
 
 const StackChakra = chakra(motion.div, {
   /**
@@ -48,6 +63,8 @@ const StackChakra = chakra(motion.div, {
 })
 
 export const Projects = () => {
+
+  console.log(projects)
 
   const [isNotSmallerScreen] = useMediaQuery('(min-width: 700px)');
 
@@ -64,37 +81,14 @@ export const Projects = () => {
     >
       <Grid
         p='1rem'
-        templateColumns={isNotSmallerScreen ? 'repeat(3, 420px)' : 'repeat(1, 420px)'}
+        templateColumns={isNotSmallerScreen ? 'repeat(3, 420px)' : 'repeat(1, 350px)'}
         gap={6}
         alignItems='center'
       >
-        <Box
-          border='1px'
-          borderColor='gray.200'
-          rounded='10px'
-          as='a'
-          position='relative'
-          target='_blank'
-          href="https://chakra-ui.com/docs/components"
-        >
-          <AspectRatio maxW='420px' maxH='300px' ratio={1}>
-            <Image rounded='10px' src='/assets/dotmoney-desktop.png' transition='0.2s linear' _hover={{ boxShadow: 'md' }} />
-          </AspectRatio>
-
-
-          <Flex
-            bg='gray.300'
-            w='full'
-            rounded='0 0 10px 10px'
-            position='absolute'
-            bottom='0'
-          >Oi</Flex>
-        </Box>
-        <GridItem border='1px' rounded='10px' h='300' />
-        <GridItem border='1px' rounded='10px' h='300' />
-        <GridItem border='1px' rounded='10px' h='300' />
-        <GridItem border='1px' rounded='10px' h='300' />
-        <GridItem border='1px' rounded='10px' h='300' />
+        {projects && projects.map((project: any) => (
+          <ProjectCard project={project} />
+        )
+        )}
       </Grid>
     </StackChakra >
 
