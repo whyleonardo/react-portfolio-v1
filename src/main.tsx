@@ -17,8 +17,15 @@ const colors = {
   chakra: '#3ac7bd'
 }
 
+const config = {
+  initialColorMode: 'dark',
+  useSystemColorMode: false,
+  disableTransitionOnChange: false
+}
+
 const theme = extendTheme({
   colors,
+  config,
   styles: {
     global: {
       body: {
