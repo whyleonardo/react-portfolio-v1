@@ -57,6 +57,8 @@ export const MenuNavHeader = () => {
               w='12.5rem'
               alignItems='center'
               justifyContent='center'
+              _active={{ bg: 'none' }}
+              _focus={{ bg: 'none' }}
               border='1px'
               borderColor={isDark ? 'gray.700' : 'black'}
               color={isDark ? 'gray.400' : 'black'}
@@ -68,6 +70,8 @@ export const MenuNavHeader = () => {
                 display='flex'
                 flexDirection='column'
                 alignItems='center'
+                _active={{ bg: 'none' }}
+                _focus={{ bg: 'none' }}
                 gap='2'
                 href="https://github.com/whyleonardo"
               >
@@ -84,6 +88,8 @@ export const MenuNavHeader = () => {
               alignItems='center'
               justifyContent='center'
               border='1px'
+              _active={{ bg: 'none' }}
+              _focus={{ bg: 'none' }}
               borderColor={isDark ? 'gray.700' : 'black'}
               color={isDark ? 'gray.400' : 'black'}
               _hover={{ bg: 'blue.400', color: 'white', border: 'none' }}
@@ -94,6 +100,8 @@ export const MenuNavHeader = () => {
                 display='flex'
                 flexDirection='column'
                 alignItems='center'
+                _active={{ bg: 'none' }}
+                _focus={{ bg: 'none' }}
                 gap='2'
                 href="https://www.linkedin.com/in/christianlsb/"
               >
