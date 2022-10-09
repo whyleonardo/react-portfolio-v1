@@ -48,7 +48,7 @@ export const Home = () => {
       initial='hidden'
       animate='visible'
       exit='exit'
-      transition={'all 1s'}
+      transition='1s all ease-out'
     >
       <Header />
       <Social />

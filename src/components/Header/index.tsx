@@ -1,4 +1,4 @@
-import { Circle, Stack, useColorMode, useMediaQuery, Flex, Box, Text, Button, Image, keyframes } from "@chakra-ui/react";
+import { Circle, Stack, useColorMode, useMediaQuery, Flex, Box, Text, Button, Image, keyframes, Code } from "@chakra-ui/react";
 import { motion } from "framer-motion";
 import { Link as RouterLink } from 'react-router-dom'
 
@@ -57,13 +57,16 @@ export const Header = () => {
           >
             Christian Leonardo</Text>
 
-          <Text
+          <Code
+            display='block'
+            maxW='28rem'
+            colorScheme='blue'
             mt='4'
             fontWeight='semibold'
             fontSize='3xl'
-            color={isDark ? 'gray.200' : 'gray.500'}
-          >
-            Desenvolvedor Front-End </Text>
+            color={isDark ? 'blue.200' : 'blue.700'}
+            children='<Desenvolvedor Front-End/>'
+          />
 
           <Button
             as={RouterLink}

@@ -72,8 +72,6 @@ const StackChakra = chakra(motion.div, {
 
 export const Projects = () => {
 
-  console.log(projects)
-
   const [isNotSmallerScreen] = useMediaQuery('(min-width: 700px)');
 
   return (
