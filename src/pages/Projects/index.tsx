@@ -32,9 +32,9 @@ const projects = [
 
   {
     title: 'Movie Shop',
-    url: '#',
+    url: 'https://movie-shop-two.vercel.app/',
     img: '',
-    repo: 'https://github.com/whyleonardo/mini-shop',
+    repo: 'https://github.com/whyleonardo/movie-shop',
     isCompleted: false
   },
 
